@@ -29,7 +29,6 @@ _zsh_togglecursor_apply_cursor() {
     _zsh_togglecursor_supported || return $ret
 
     local format='%b'
-    [[ -n "$TMUX" ]] && format="\ePtmux;\e%b\e\\"
 
     case "$1" in
         'block')
