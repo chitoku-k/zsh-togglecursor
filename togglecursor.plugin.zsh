@@ -22,7 +22,9 @@ _zsh_togglecursor_reset() {
 }
 
 _zsh_togglecursor_supported() {
-    [[ "$TERM_PROGRAM" =~ 'iTerm\.app|Apple_Terminal' ]] || [[ "$VTE_VERSION" -ge 3900 ]]
+    [[ "$TERM_PROGRAM" =~ 'iTerm\.app|Apple_Terminal' ]] ||
+        [[ "$VTE_VERSION" -ge 3900 ]] ||
+        [[ "$TERMINAL_EMULATOR" = 'JetBrains-JediTerm' ]]
 }
 
 _zsh_togglecursor_apply_cursor() {
@@ -32,7 +34,7 @@ _zsh_togglecursor_apply_cursor() {
 
     case "$1" in
         'block')
-            printf $format "\e[0 q"
+            printf $format "\e[1 q"
             ;;
         'underline')
             printf $format "\e[3 q"
