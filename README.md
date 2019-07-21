@@ -8,12 +8,12 @@ insert (usually main) keymaps.
 
 ## zsh
 
-Zsh that includes `add-zle-hook-widget` (e.g., Version 5.3 or higher).
+Version 5.3 or higher is required.
 
 ## Terminal
 
 The terminal application that understands `DECSCUSR`, which fixes the style of
-the cursor: Terminator, Konsole, iTerm2, Apple Terminal, and Konsole are known
+the cursor. Terminator, Konsole, iTerm2, Apple Terminal, and Konsole are known
 to support the feature.
 
 ## tmux
