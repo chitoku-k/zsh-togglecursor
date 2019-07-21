@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-autoload -U is-at-least
 autoload -U add-zle-hook-widget
 
 _zsh_togglecursor() {
@@ -45,7 +44,7 @@ _zsh_togglecursor_apply_cursor() {
     esac
 }
 
-if is-at-least 5.3; then
+if (( $+functions[add-zle-hook-widget] )); then
     add-zle-hook-widget zle-line-init _zsh_togglecursor
     add-zle-hook-widget zle-line-finish _zsh_togglecursor_reset
     add-zle-hook-widget zle-keymap-select _zsh_togglecursor
