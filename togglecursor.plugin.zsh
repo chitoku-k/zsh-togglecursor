@@ -6,7 +6,7 @@ autoload -U add-zle-hook-widget
 _zsh_togglecursor() {
     local ret=$?
 
-    case "$KEYMAP" in
+    case $KEYMAP in
         'main')
             _zsh_togglecursor_apply_cursor 'line'
             ;;
@@ -22,9 +22,9 @@ _zsh_togglecursor_reset() {
 }
 
 _zsh_togglecursor_supported() {
-    [[ "$TERM_PROGRAM" =~ 'iTerm\.app|Apple_Terminal' ]] ||
-        [[ "$VTE_VERSION" -ge 3900 ]] ||
-        [[ "$TERMINAL_EMULATOR" = 'JetBrains-JediTerm' ]]
+    [[ $TERM_PROGRAM =~ iTerm\.app\|Apple_Terminal ]] ||
+        [[ $VTE_VERSION -ge 3900 ]] ||
+        [[ $TERMINAL_EMULATOR = 'JetBrains-JediTerm' ]]
 }
 
 _zsh_togglecursor_apply_cursor() {
