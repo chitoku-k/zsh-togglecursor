@@ -23,6 +23,7 @@ _zsh_togglecursor_reset() {
 
 _zsh_togglecursor_supported() {
     [[ $TERM_PROGRAM =~ iTerm\.app\|Apple_Terminal ]] ||
+        [[ -n $WT_SESSION ]] ||
         [[ $VTE_VERSION -ge 3900 ]] ||
         [[ $TERMINAL_EMULATOR = 'JetBrains-JediTerm' ]]
 }
